@@ -1,12 +1,13 @@
-import time
-import schedule
+
+import os
 from telegram import Bot
+from schedule import every, run_pending
+import time
+import asyncio
 
-# Ваш токен від BotFather
-BOT_TOKEN = "7944589418:AAGzggoHINw9WTvnnbLC945Ax3sr8zcCWaY"
-CHAT_ID = "1424672248"  # ID вашого чату (можна дізнатися, надіславши /start боту і отримавши message.chat.id)
+TOKEN = os.getenv("TOKEN")  # Зчитуємо токен із змінного середовища
+CHAT_ID = "YOUR_CHAT_ID"
 
-# Ініціалізація бота
 bot = Bot(token=TOKEN)
 
 async def send_reminder():
